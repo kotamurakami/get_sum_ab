@@ -7,5 +7,5 @@ def lambda_handler(event, context):
     return {
         'statusCode': 200,
         #'body': json.dumps(hoge)
-        'body': json.dumps("test")
+        'body': json.dumps('test')
     }
