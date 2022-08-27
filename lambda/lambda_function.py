@@ -3,10 +3,10 @@ import json
 def lambda_handler(event, context):
     # TODO implement
     body = json.loads(event['body'])
-    hoge = body['hoge']
-    hoge = hoge + hoge
+    a = body['a']
+    b = body['b']
+    ans = a + b
     return {
         'statusCode': 200,
-        'body': json.dumps(hoge)
-        #'body': json.dumps(event['body'])
+        'body': json.dumps(ans)
     }
