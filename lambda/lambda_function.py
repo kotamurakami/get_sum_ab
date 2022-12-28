@@ -18,7 +18,9 @@ def lambda_handler(event, context):
     with connection.cursor() as cursors:
         cursors.execute('show databases')
     
-    return {
-        'statusCode': 200,
-        'body': json.dumps(cursors.fetchall())
-    }
+    print(cursors.fetchall())
+
+    #return {
+    #    'statusCode': 200,
+    #    'body': json.dumps(cursors.fetchall())
+    #}
