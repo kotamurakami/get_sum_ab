@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     #ans = ans + body['b']
 
     with connection.cursor() as cursors:
-        cursors.execute('select * from user')
+        cursors.execute('select sum(score) from user')
     
     print(cursors.fetchall())
 
