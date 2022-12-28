@@ -18,9 +18,9 @@ def lambda_handler(event, context):
     with connection.cursor() as cursors:
         cursors.execute('select sum(score) from user')
     
-    print(cursors.fetchall())
+    #print(cursors.fetchall())
 
-    #return {
-    #    'statusCode': 200,
-    #    'body': json.dumps(cursors.fetchall())
-    #}
+    return {
+        'statusCode': 200,
+        'body': json.dumps(cursors.fetchall())
+    }
