@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     #ans = ans + body['b']
 
     with connection.cursor() as cursors:
-        cursors.execute('show databases')
+        cursors.execute('select * from user')
     
     print(cursors.fetchall())
 
