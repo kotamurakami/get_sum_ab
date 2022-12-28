@@ -22,5 +22,5 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': json.dumps(cursors.fetchall())
+        'body': json.dumps(str(cursors.fetchall()))
     }
