@@ -1,11 +1,24 @@
 import json
+import os
+import pymysql
+
+host = os.environ['RDS_HOST_NAME']
+user = os.environ['USER']
+password = os.environ['PASS']
+db = os.environ['DB']
+
+connection = pymysql.connect(host=host, user=user, password=password, database=db)
 
 def lambda_handler(event, context):
     # TODO implement
     body = json.loads(event['body'])
-    ans = body['a']
+    #ans = body['a']
     #ans = ans + body['b']
+
+    with connection.cursor() as cursors:
+        cursors.execute('show databases')
+    
     return {
         'statusCode': 200,
-        'body': json.dumps(ans)
+        'body': json.dumps(cursors.fetchall())
     }
